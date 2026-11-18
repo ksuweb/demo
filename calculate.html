@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #f0f0f0;
+            }
+            h1 {
+                color: #333;
+            }
+            input, select, button {
+                padding: 10px;
+                margin: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <input type="number" id="num1" value="5" size="5" placeholder="Enter first number">
+
+<select id="operation">
+            <option value="add"> + </option>
+            <option value="subtract"> - </option>
+            <option value="multiply"> * </option>
+            <option value="divide"> / </option>
+        </select>
+
+        <input type="text" id="num2" value="10" size="5" placeholder="Enter second number">
+
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </body>
+    <script>
+        function calculate() 
+        {
+            var num1 = parseFloat(
+            document.getElementById('num1').value);
+
+            var num2 = parseInt(document.getElementById('num2').value);
+
+            var sum = num1 + num2;
+
+            if (document.getElementById('operation').value === 'subtract') 
+            {
+                sum = num1 - num2;
+            } 
+            else if (document.getElementById('operation').value === 'multiply') 
+            {
+                sum = num1 * num2;
+            } 
+            else if (document.getElementById('operation').value === 'divide') 
+            {
+                sum = num1 / num2;
+            }
+
+            document.getElementById('result').innerText = "Result: " + sum;
+        }
+        </script>
+</html>
